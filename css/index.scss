@@ -1,0 +1,143 @@
+body,ul,li,h1,h2,h3,h4,h5,h6,textarea,form,input,ol{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+img{
+	border:none;
+}
+body{
+	overflow:hidden;
+	/*background: #000;*/
+}
+a{
+	text-decoration:none;
+}
+
+%center{
+	position:absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom:0;
+	margin:auto;
+}
+
+$width:600px;
+
+.container{
+	@extend %center;
+	width:100%;
+	height:100%;
+	background:#e9ebc4 url(1.jpg) no-repeat center center;	
+	position-size:900px 900px;
+
+ .qipan{
+	@extend %center;
+	background:#2E1205;
+	opacity:0.9;
+	width: $width;
+	height:$width;
+}
+ }
+		.hang{
+		display:block;
+		position:absolute;
+		left:$width/30;
+		height:1px;
+		background:#fff;
+		width:$width - $width/15;
+	}
+
+		.shu{
+		display: block;	
+		position:absolute;
+		top:$width/30;
+		width: 1px;
+		background:#fff;
+		height:$width - $width/15;
+		
+	}
+.qizi{
+	position:relative;
+	z-index: 2220;
+	float: left;
+	width:$width/15 - 10px;
+	height: $width/15 - 10px;
+	margin: 5px;
+	border-radius: 50%;
+}
+.qizi.bai{
+	background: #E0E0E0;
+}
+.qizi.hei{
+	background: #000;
+}
+
+.container .qipan span{
+	width:$width/80;
+	height:$width/80;
+	border-radius:50%; 
+	background:#000;
+	position:absolute;
+    transform:translate3d(-45%,-45%,0);
+	z-index: 1000;
+	opacity: 0;
+
+}
+
+ .container .qipan span:nth-of-type(1){
+	top: 181px;
+	left: 140px;  
+	transition-delay:.3s;
+	opacity: 1;
+}
+
+.container .qipan span:nth-of-type(2){
+	top: 140px;
+	left:460px;
+	transition-delay:.6s;
+	opacity: 1;
+}
+
+.container .qipan span:nth-of-type(3){
+	left: 140px;
+	top:460px;
+	transition-delay:.9s;
+	opacity:1;
+}
+
+.container .qipan span:nth-of-type(4){
+	left: 460px;
+	top:460px;
+	transition-delay:1.2s;
+	opacity:1;
+}
+
+.container .qipan span:nth-of-type(5){
+	left:300px;
+	top:300px;
+	transition-delay:1.5s;
+	opacity: 1;
+}
+/* @keyframes diao{
+	0%{
+		opacity: 0;
+		transform:translateY(-1000px);
+	}
+	50%{
+		opacity: 1;
+		transform:translateY(0); 
+	}
+} */
+
+@for $i from 0 through 14{
+ .qipan i:nth-of-type(#{$i+1}){
+   top:$width/30+$i*$width/15;
+ }
+}
+@for $j from 0 through 14{
+ .qipan b:nth-of-type(#{$j+1}){
+   left:$width/30+$j*$width/15;
+ }
+}
